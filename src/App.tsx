@@ -1,4 +1,5 @@
 import { defineComponent, ref } from "vue";
+import "./App.scss"
 
 export const App = defineComponent({
     setup() {
@@ -7,19 +8,9 @@ export const App = defineComponent({
             refCount.value++;
         }
         return () => (
-            <>
-            <ul>
-                <li>
-                    <router-link to="/">Foo</router-link>
-                </li>
-                <li>
-                    <router-link to="/about">Bar</router-link>
-                </li>
-            </ul>
-            <header>页面</header>
+            <div>
                 <router-view/>
-            <footer>页脚</footer>
-            </>
+            </div>
 
         )
     }
