@@ -25,7 +25,6 @@ export const routes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: '/start',
-    component: StartPage,
+    path: '/start', component: StartPage,
   }
 ]
