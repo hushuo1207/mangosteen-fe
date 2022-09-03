@@ -1,4 +1,5 @@
-import { defineComponent, ref } from "vue";
+import { defineComponent, Transition, VNode } from "vue";
+import { RouteLocationNormalizedLoaded, RouterView } from "vue-router";
 import "./App.scss"
 
 export const App = defineComponent({
