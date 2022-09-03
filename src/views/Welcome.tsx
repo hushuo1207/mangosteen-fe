@@ -18,12 +18,15 @@ export const Welcome = defineComponent({
     const { direction, swiping } = useSwipe(main, { beforeStart: e => e.preventDefault() })
     const route = useRoute()
     const router = useRouter()
+    //  此处可以使用replace 代替push
     const push = throttle(() => {
       const name = (route.name || 'Welcome1').toString()
+      // replce 会导致路由栈中的路由被替换
       router.push(pushMap[name])
     }, 500)
     watchEffect(() => {
       if (swiping.value && direction.value === 'left') {
+        // replace()  防止出发回退也想左滑的bug
         push()
       }
     })
